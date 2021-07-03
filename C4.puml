@@ -51,6 +51,11 @@ skinparam queue {
     shadowing false
 }
 
+skinparam file {
+    StereotypeFontSize 12
+    shadowing false
+}
+
 skinparam Arrow {
     Color $ARROW_COLOR
     FontColor $ARROW_COLOR
