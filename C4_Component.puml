@@ -38,6 +38,7 @@ legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system |
+|<$COMPONENT_BG_COLOR> file |
 |<$CONTAINER_BG_COLOR> container |
 |<$COMPONENT_BG_COLOR> component |
 |<$EXTERNAL_PERSON_BG_COLOR> external person |
