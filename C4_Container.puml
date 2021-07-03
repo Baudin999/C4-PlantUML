@@ -27,7 +27,7 @@ UpdateElementStyle("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_
 ' Layout
 ' ##################################
 
-SetDefaultLegendEntries("person\nsystem\ncontainer\nexternal_person\nexternal_system\nexternal_container")
+SetDefaultLegendEntries("file\person\nsystem\ncontainer\nexternal_person\nexternal_system\nexternal_container")
 
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
