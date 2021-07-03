@@ -80,6 +80,10 @@ queue "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("co
 rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
 !endprocedure
 
+!unquoted procedure File($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+!endprocedure
+
 !unquoted procedure ComponentDb_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
 database "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
 !endprocedure
