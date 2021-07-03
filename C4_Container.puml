@@ -89,9 +89,6 @@ queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("ex
 file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("file",$tags) as $alias $getLink($link)
 !endprocedure
 
-!unquoted procedure Interface($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
-interface "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("interface",$tags) as $alias $getLink($link)
-!endprocedure
 
 ' Boundaries
 ' ##################################
