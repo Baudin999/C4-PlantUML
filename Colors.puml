@@ -186,6 +186,11 @@ skinparam queue {
   font_style()
 }
 
+skinparam file {
+  accent_style()
+  font_style()
+}
+
 ' Use Case diagrams
 
 skinparam usecase {
