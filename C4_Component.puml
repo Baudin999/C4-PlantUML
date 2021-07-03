@@ -30,7 +30,7 @@ UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONEN
 ' Layout
 ' ##################################
 
-SetDefaultLegendEntries("person\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
+SetDefaultLegendEntries("file\person\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
 
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
@@ -83,7 +83,11 @@ rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos
 !endprocedure
 
 !unquoted procedure File($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
-file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("component",$tags) as $alias $getLink($link)
+file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("file",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure Interface($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+interface "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("interface",$tags) as $alias $getLink($link)
 !endprocedure
 
 !unquoted procedure ComponentDb_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
