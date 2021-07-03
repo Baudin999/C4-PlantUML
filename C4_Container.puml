@@ -20,6 +20,7 @@
 
 ' Styling
 ' ##################################
+UpdateElementStyle("file", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
 UpdateElementStyle("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
 UpdateElementStyle("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_CONTAINER_BORDER_COLOR)
 
@@ -34,6 +35,7 @@ legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system |
+|<$CONTAINER_BG_COLOR> file |
 |<$CONTAINER_BG_COLOR> container |
 |<$EXTERNAL_PERSON_BG_COLOR> external person |
 |<$EXTERNAL_SYSTEM_BG_COLOR> external system |
