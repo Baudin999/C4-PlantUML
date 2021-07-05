@@ -4,7 +4,7 @@
 ' !else
 '   !include https://raw.githubusercontent.com/baudin999/C4-PlantUML/master/C4_Container.puml
 ' !endif
-!include https://raw.githubusercontent.com/baudin999/C4-PlantUML/master/C4.puml
+
 
 ' Scope: A single container.
 ' Primary elements: Components within the container in scope.
@@ -154,4 +154,8 @@ queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("ex
 
 !unquoted procedure Container_Boundary($alias, $label, $tags="", $link="")
 Boundary($alias, $label, "Container", $tags, $link)
+!endprocedure
+
+!unquoted procedure System_Boundary($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "System", $tags, $link)
 !endprocedure
