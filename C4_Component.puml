@@ -146,9 +146,6 @@ database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos(
 queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
 !endprocedure
 
-!unquoted procedure File($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
-file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("file",$tags) as $alias $getLink($link)
-!endprocedure
 
 
 ' Boundaries
