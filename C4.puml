@@ -53,7 +53,7 @@ skinparam queue {
 
 skinparam file {
     StereotypeFontSize 12
-    shadowing false
+    shadowing true
 }
 
 skinparam Arrow {
