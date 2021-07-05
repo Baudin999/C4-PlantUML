@@ -27,10 +27,17 @@
 !global $EXTERNAL_CONTAINER_BG_COLOR = "#B3B3B3"
 !global $EXTERNAL_CONTAINER_BORDER_COLOR = "#A6A6A6"
 
+' Report colors
+!global $REPORT_FONT_COLOR = "#000000"
+!global $REPORT_BG_COLOR = "#85BBF0"
+!global $REPORT_BORDER_COLOR = "#78A8D8"
+
+
 ' Styling
 ' ##################################
 
-UpdateElementStyle("file", $COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COMPONENT_BORDER_COLOR)
+UpdateElementStyle("file", $REPORT_BG_COLOR, $REPORT_FONT_COLOR, $REPORT_BORDER_COLOR)
+UpdateElementStyle("report", $REPORT_BG_COLOR, $REPORT_FONT_COLOR, $REPORT_BORDER_COLOR)
 UpdateElementStyle("component", $COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COMPONENT_BORDER_COLOR)
 UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $EXTERNAL_COMPONENT_BORDER_COLOR)
 UpdateElementStyle("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
@@ -48,6 +55,7 @@ legend right
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system |
 |<$COMPONENT_BG_COLOR> file |
+|<$COMPONENT_BG_COLOR> report |
 |<$CONTAINER_BG_COLOR> container |
 |<$COMPONENT_BG_COLOR> component |
 |<$EXTERNAL_PERSON_BG_COLOR> external person |
@@ -92,6 +100,10 @@ rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos
 !endprocedure
 
 !unquoted procedure File($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("file",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure Report($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
 file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("file",$tags) as $alias $getLink($link)
 !endprocedure
 
