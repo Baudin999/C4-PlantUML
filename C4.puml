@@ -588,7 +588,18 @@ rectangle "$getBoundary($label, $type)" $toStereos("boundary", $tags) as $alias 
 $alias1 $direction $alias2 : **$label**
 !endprocedure
 !unquoted procedure Rel_($alias1, $alias2, $label, $techn, $direction)
-$alias1 $direction $alias2 : **$label**\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//
+!if ($label != "" && $techn != "")
+  $alias1 $direction $alias2 : **$label**\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//
+!endif
+!if ($label != "" && $techn == "")
+  $alias1 $direction $alias2 : **$label**
+!endif
+!if ($label == "" && $techn != "")
+  $alias1 $direction $alias2 : //<size:$TECHN_FONT_SIZE>[$techn]</size>//
+!endif
+!if ($label == "" && $techn == "")
+  $alias1 $direction $alias2 :
+!endif
 !endprocedure
 
 !unquoted procedure Rel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
