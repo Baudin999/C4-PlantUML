@@ -473,11 +473,11 @@ $elementSkin
   !return ""
 !endfunction
 
-!unquoted function $getProps($alignedNL = "\n\n")
+!unquoted function $getProps($alignedNL = "\n")
   !if ($propTable != "")
     !$retTable = $alignedNL + $propTable
     !$propTable = ""
-    !return $retTable
+    !return "\n\n" + $retTable
   !endif
   !return ""
 !endfunction
