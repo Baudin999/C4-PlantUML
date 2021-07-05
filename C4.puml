@@ -566,14 +566,16 @@ rectangle "$getBoundary($label, $type)" $toStereos("boundary", $tags) as $alias 
   !endif  
   !if ($link != "")
     !$rel = $rel + '**[[' + $link + ' ' + $label + ']]**'
-  !else
+  '!else
     ' CK Removing the **** label  on a relation when empty
     ' !$rel = $rel + '**' + $label + '**'
-    !$rel = $rel + ''
+  '  !$rel = $rel + ''
   !endif
   !if ($techn != "")
     ' line break is not deterministic, calculate it
     !$rel = $rel + '\n//<size:' + $TECHN_FONT_SIZE + '>[' + $breakTechn($techn, $REL_TECHN_MAX_CHAR_WIDTH) + ']</size>//'
+  !else
+    !rel = $rel
   !endif
   !if ($descr != "")
     ' line break is not deterministic, calculate it
