@@ -20,12 +20,20 @@
 !global $EXTERNAL_COMPONENT_BG_COLOR = "#CCCCCC"
 !global $EXTERNAL_COMPONENT_BORDER_COLOR = "#BFBFBF"
 
+' Container colors
+!global $CONTAINER_BG_COLOR = "#438DD5"
+!global $CONTAINER_BORDER_COLOR = "#3C7FC0"
+!global $EXTERNAL_CONTAINER_BG_COLOR = "#B3B3B3"
+!global $EXTERNAL_CONTAINER_BORDER_COLOR = "#A6A6A6"
+
 ' Styling
 ' ##################################
 
 UpdateElementStyle("file", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COMPONENT_BORDER_COLOR)
 UpdateElementStyle("component", $COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COMPONENT_BORDER_COLOR)
 UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $EXTERNAL_COMPONENT_BORDER_COLOR)
+UpdateElementStyle("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
+UpdateElementStyle("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_CONTAINER_BORDER_COLOR)
 
 ' Layout
 ' ##################################
@@ -92,4 +100,60 @@ database "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos(
 
 !unquoted procedure ComponentQueue_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
 queue "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+!endprocedure
+
+
+' Container Elements
+' ##############################################
+
+!function $getContainer($label, $techn, $descr, $sprite)
+!if ($descr == "") && ($sprite == "")
+!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
+!endif
+!if ($descr == "") && ($sprite != "")
+!return '<$'+$sprite+'>\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
+!endif
+!if ($descr != "") && ($sprite == "")
+!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
+!endif
+!if ($descr != "") && ($sprite != "")
+!return '<$'+$sprite+'>\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
+!endif
+!endfunction
+
+
+!unquoted procedure Container($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerDb($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerQueue($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure Container_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerDb_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerQueue_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure File($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+file "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("file",$tags) as $alias $getLink($link)
+!endprocedure
+
+
+' Boundaries
+' ##################################
+
+!unquoted procedure Container_Boundary($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "Container", $tags, $link)
 !endprocedure
