@@ -170,3 +170,7 @@ Boundary($alias, $label, "Container", $tags, $link)
 !unquoted procedure System_Boundary($alias, $label, $tags="", $link="")
 Boundary($alias, $label, "System", $tags, $link)
 !endprocedure
+
+!unquoted procedure System($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "System", $tags, $link)
+!endprocedure
