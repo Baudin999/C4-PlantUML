@@ -27,7 +27,7 @@
 !global $EXTERNAL_CONTAINER_BG_COLOR = "#B3B3B3"
 !global $EXTERNAL_CONTAINER_BORDER_COLOR = "#A6A6A6"
 
-' Report colors
+' Report/File colors
 !global $REPORT_FONT_COLOR = "#000000"
 !global $REPORT_BG_COLOR = "#85BBF0"
 !global $REPORT_BORDER_COLOR = "#78A8D8"
