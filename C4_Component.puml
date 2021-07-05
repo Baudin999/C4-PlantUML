@@ -37,7 +37,6 @@
 ' ##################################
 
 UpdateElementStyle("file", $REPORT_BG_COLOR, $REPORT_FONT_COLOR, $REPORT_BORDER_COLOR)
-UpdateElementStyle("report", $REPORT_BG_COLOR, $REPORT_FONT_COLOR, $REPORT_BORDER_COLOR)
 UpdateElementStyle("component", $COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COMPONENT_BORDER_COLOR)
 UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $EXTERNAL_COMPONENT_BORDER_COLOR)
 UpdateElementStyle("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
@@ -46,7 +45,7 @@ UpdateElementStyle("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_
 ' Layout
 ' ##################################
 
-SetDefaultLegendEntries("file\nperson\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
+SetDefaultLegendEntries("report\nfile\nperson\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
 
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
