@@ -598,7 +598,7 @@ $alias1 $direction $alias2 : **$label**
   $alias1 $direction $alias2 : //<size:$TECHN_FONT_SIZE>[$techn]</size>//
 !endif
 !if ($label == "" && $techn == "")
-  $alias1 $direction $alias2 :
+  $alias1 $direction $alias2 : ""
 !endif
 !endprocedure
 
