@@ -81,7 +81,7 @@ skinparam rectangle<<boundary>> {
 }
 
 skinparam rectangle<<business_function>> {
-    BorderStyle dashed
+    RoundCorder 10
 }
 
 ' Legend and Tags
