@@ -33,6 +33,10 @@
 !global $REPORT_BORDER_COLOR = "#78A8D8"
 
 
+' Business function
+!global $BUSINESS_FUNCTION_BG_COLOR = "#d6c72a"
+!global $BUSINESS_FUNCTION_BORDER_COLOR = "#8c8004"
+
 ' Styling
 ' ##################################
 
@@ -41,11 +45,12 @@ UpdateElementStyle("component", $COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COM
 UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $EXTERNAL_COMPONENT_BORDER_COLOR)
 UpdateElementStyle("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
 UpdateElementStyle("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_CONTAINER_BORDER_COLOR)
+UpdateElementStyle("business_function", $BUSINESS_FUNCTION_BG_COLOR, $ELEMENT_FONT_COLOR, $BUSINESS_FUNCTION_BORDER_COLOR)
 
 ' Layout
 ' ##################################
 
-SetDefaultLegendEntries("report\nfile\nperson\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
+SetDefaultLegendEntries("business_function\nreport\nfile\nperson\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
 
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
@@ -112,6 +117,10 @@ database "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos(
 
 !unquoted procedure ComponentQueue_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
 queue "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure BusinessFunction($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
+rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
 !endprocedure
 
 
