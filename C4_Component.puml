@@ -120,7 +120,7 @@ queue "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("ex
 !endprocedure
 
 !unquoted procedure BusinessFunction($alias, $label, $techn, $descr="", $sprite="", $tags="", $link="")
-rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("business_function",$tags) as $alias $getLink($link)
 !endprocedure
 
 
