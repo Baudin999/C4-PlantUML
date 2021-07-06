@@ -80,6 +80,10 @@ skinparam rectangle<<boundary>> {
     BorderStyle dashed
 }
 
+skinparam rectangle<<business_function>> {
+    BorderStyle dashed
+}
+
 ' Legend and Tags
 ' ##################################
 !global $tagDefaultLegend = ""
@@ -160,6 +164,7 @@ skinparam rectangle<<boundary>> {
   !$tagSkin = $tagSkin + $elementTagSkinparams("database", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing)
   !$tagSkin = $tagSkin + $elementTagSkinparams("queue", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing)
   !$tagSkin = $tagSkin + $elementTagSkinparams("file", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing)
+  !$tagSkin = $tagSkin + $elementTagSkinparams("business_function", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing)
   !if ($tagStereo == "boundary" && $bgColor!="")
     !$tagSkin = $tagSkin + "skinparam package<<boundary>>StereotypeFontColor " + $bgColor + %newline()
     !$tagSkin = $tagSkin + "skinparam rectangle<<boundary>>StereotypeFontColor " + $bgColor + %newline()
