@@ -1,12 +1,12 @@
 
-!global $Participant_FONT_COLOR = "#FFFFFF"
-!global $Participant_BG_COLOR = "#438DD5"
-!global $Participant_BORDER_COLOR = "#3C7FC0"
+!global $PARTICIPANT_FONT_COLOR = "#FFFFFF"
+!global $PARTICIPANT_BG_COLOR = "#438DD5"
+!global $PARTICIPANT_BORDER_COLOR = "#3C7FC0"
 
 skinparam sequence {
-    ParticipantBackgroundColor $Participant_BG_COLOR
-    ParticipantBorderColor $Participant_BORDER_COLOR
-    ParticipantFontColor $Participant_FONT_COLOR
+    ParticipantBackgroundColor $PARTICIPANT_BG_COLOR
+    ParticipantBorderColor $PARTICIPANT_BORDER_COLOR
+    ParticipantFontColor $PARTICIPANT_FONT_COLOR
     
-    ParticipoantShadowing false
+    ParticipantShadowing false
 }
