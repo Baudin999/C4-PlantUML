@@ -1,0 +1,12 @@
+
+!global $ACTOR_FONT_COLOR = "#FFFFFF"
+!global $ACTOR_BG_COLOR = "#438DD5"
+!global $ACTOR_BORDER_COLOR = "#3C7FC0"
+
+skinparam sequence {
+    ActorBackgroundColor $ACTOR_BG_COLOR
+    ActorFontColor $ACTOR_BORDER_COLOR
+    FontColor $ACTOR_FONT_COLOR
+
+    shadowing false
+}
