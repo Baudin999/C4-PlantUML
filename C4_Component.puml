@@ -184,3 +184,7 @@ Boundary($alias, $label, "System", $tags, $link)
 !unquoted procedure System($alias, $label, $tags="", $link="")
 Boundary($alias, $label, "System", $tags, $link)
 !endprocedure
+
+!unquoted procedure System($alias, $label, $tech, $tags="", $link="")
+Boundary($alias, $label, $tech, $tags, $link)
+!endprocedure
